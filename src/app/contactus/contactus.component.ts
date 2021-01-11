@@ -28,7 +28,6 @@ export class ContactusComponent implements OnInit {
     });
   }
   onSubmit(FormData) {
-    console.log(FormData);
     this.spinnerShow = true;
     this.http.post(baseURL + 'messages', FormData).subscribe(
       (message) => {

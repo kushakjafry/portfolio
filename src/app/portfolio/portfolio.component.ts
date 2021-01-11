@@ -16,13 +16,11 @@ export class PortfolioComponent implements OnInit {
   ngOnInit(): void {
     if (this.projectService.getProjects) {
       this.projects = this.projectService.getProjects;
-      console.log('already having projects');
     } else {
       this.projectService.getPortfolios().subscribe(
         (projects) => {
           this.projectService.setProjects = projects;
           this.projects = projects;
-          console.log('fetched projects');
         },
         (errmess) => (this.errMess = errmess)
       );
