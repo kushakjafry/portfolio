@@ -12,6 +12,7 @@ import { ProcessHttpMsgService } from './services/process-http-msg.service';
 import { ProjectService } from './services/project.service';
 import { HttpClientModule } from '@angular/common/http';
 import { baseURL } from './shared/baseUrl';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,12 @@ import { baseURL } from './shared/baseUrl';
     PortfolioComponent,
     ContactusComponent,
   ],
-  imports: [BrowserModule.withServerTransition({ appId: 'serverApp' }), AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [
     ProcessHttpMsgService,
     ProjectService,
