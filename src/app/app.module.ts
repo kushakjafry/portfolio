@@ -23,7 +23,7 @@ import { baseURL } from './shared/baseUrl';
     PortfolioComponent,
     ContactusComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule.withServerTransition({ appId: 'serverApp' }), AppRoutingModule, HttpClientModule],
   providers: [
     ProcessHttpMsgService,
     ProjectService,

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import * as Typewriter from 't-writer.js';
+import { PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -7,17 +9,19 @@ import * as Typewriter from 't-writer.js';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
   ngOnInit(): void {
-    const target = document.querySelector('.tw');
-    const writer = new Typewriter(target, {
-      loop: true,
-      typeColor: '#2f89fc',
-      cursorColor: '#2f89fc',
-      typeSpeed: 200,
-      deleteSpeed: 100,
-    });
+    if (isPlatformBrowser(this.platformId)) {
+      const target = document.querySelector('.tw');
+      const writer = new Typewriter(target, {
+        loop: true,
+        typeColor: '#2f89fc',
+        cursorColor: '#2f89fc',
+        typeSpeed: 200,
+        deleteSpeed: 100,
+      });
 
-    writer.strings(2000, 'Website', 'App').start();
+      writer.strings(2000, 'Website', 'App').start();
+    }
   }
 }
