@@ -1,0 +1,79 @@
+<div class="main-row row text-center">
+  <div class="col col-12 mb-5 pb-5">
+    <p class="h6 sub-heading text-muted">Portfolio</p>
+    <h1 class="h1 main-heading">Checkout a few of my works</h1>
+  </div>
+  <div class="col col-12">
+    <div class="row projects" *ngFor="let project of projects; let i = index">
+      <div class="col col-12 col-sm-1 mt-sm-5 mb-sm-5" *ngIf="i % 2 == 0"></div>
+      <div
+        class="col col-12 col-sm-4 project-image mt-sm-5 mb-sm-5"
+        *ngIf="i % 2 == 0"
+        style="background-image: url('{{
+          baseURL + project.main_image.url.substring(1)
+        }}')"
+      ></div>
+      <div class="col col-12 col-sm-1 mt-sm-5 mb-sm-5" *ngIf="i % 2 == 0"></div>
+      <div
+        class="col col-12 col-sm-6 text-md-left pt-5 pb-5 text-center text-sm-left mt-sm-5 mb-sm-5"
+        *ngIf="i % 2 == 0"
+      >
+        <div class="sub-heading text-muted">{{ project.Category }}</div>
+        <h3 class="mt-4 mb-5">{{ project.name }}</h3>
+        <p class="text-muted mt-3 mb-3">
+          {{ project.small_description }}
+        </p>
+        <a
+          *ngIf="project.project_link !== 'private'"
+          href="{{ project.project_link }}"
+          target="blank"
+          >View Live Project</a
+        >
+        <a
+          *ngIf="project.github_link !== 'private'"
+          href="{{ project.github_link }}"
+          target="blank"
+          >Github Link</a
+        >
+      </div>
+      <div
+        *ngIf="i % 2 == 1"
+        class="col col-12 col-sm-4 d-block d-sm-none project-image mt-sm-5 mb-sm-5"
+        style="background-image: url('{{
+          baseURL + project.main_image.url.substring(1)
+        }}')"
+      ></div>
+      <div *ngIf="i % 2 == 1" class="col col-12 col-sm-1 mt-sm-5 mb-sm-5"></div>
+      <div
+        *ngIf="i % 2 == 1"
+        class="col col-12 col-sm-6 text-md-left pt-5 pb-5 text-center text-sm-left mt-sm-5 mb-sm-5"
+      >
+        <div class="sub-heading text-muted">{{ project.Category }}</div>
+        <h3 class="mt-4 mb-5">{{ project.name }}</h3>
+        <p class="text-muted mt-3 mb-3">
+          {{ project.small_description }}
+        </p>
+        <a
+          *ngIf="project.project_link !== 'private'"
+          href="{{ project.project_link }}"
+          target="blank"
+          >View Live Project</a
+        >
+        <a
+          *ngIf="project.github_link !== 'private'"
+          href="{{ project.github_link }}"
+          target="blank"
+          >Github Link</a
+        >
+      </div>
+      <div *ngIf="i % 2 == 1" class="col col-12 col-sm-1 mt-sm-5 mb-sm-5"></div>
+      <div
+        *ngIf="i % 2 == 1"
+        class="col col-12 col-sm-4 d-none d-sm-block project-image mt-sm-5 mb-sm-5"
+        style="background-image: url('{{
+          baseURL + project.main_image.url.substring(1)
+        }}')"
+      ></div>
+    </div>
+  </div>
+</div>

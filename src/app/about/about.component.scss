@@ -1,0 +1,48 @@
+@import "../../variables";
+.about-row {
+  width: 100%;
+  height: 100%;
+  .profile-image {
+    background-image: url("/assets/images/2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    // transform: translateY(20%);
+  }
+  .about-me {
+    text-align: center;
+    position: relative;
+    .bold-text {
+      font-size: 10em;
+      position: absolute;
+      top: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-weight: 700 !important;
+      color: rgba(255, 255, 255, 0.08);
+      text-transform: uppercase;
+    }
+    .introduction {
+      font-size: 18px;
+      line-height: 1.8em;
+    }
+    .resume {
+      a {
+        color: $blue-primary;
+        text-decoration: none;
+      }
+    }
+    .hire_me {
+      .btn {
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      p {
+        a {
+          text-decoration: none;
+          color: $blue-primary;
+        }
+      }
+    }
+  }
+}

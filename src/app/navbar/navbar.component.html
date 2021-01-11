@@ -1,0 +1,120 @@
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="nav">
+        <div class="navbar-brand">
+          <a routerLink="">Kushak Jafry</a>
+        </div>
+        <div class="navbar-icon" (click)="showNav()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="full-menu" #fullMenu>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col d-none d-md-block col-4 menu-profile">
+                <div class="overlay"></div>
+              </div>
+              <div class="col col-12 col-md-8">
+                <ul class="page-menu" #pageMenu>
+                  <li #navlink>
+                    <a
+                      (click)="hideNav()"
+                      class="h3 mb-3 d-inline-block nav_link_brand"
+                      routerLink="/"
+                      routerLinkActive="active-link"
+                      >Kushak Jafry</a
+                    >
+                  </li>
+                  <li #navlink>
+                    <a
+                      (click)="hideNav()"
+                      class="nav_link"
+                      routerLink="/"
+                      routerLinkActive="active-link"
+                      >Home</a
+                    >
+                  </li>
+                  <li #navlink>
+                    <a (click)="hideNav()" class="nav_link" href="#about"
+                      >Resume</a
+                    >
+                  </li>
+                  <li #navlink>
+                    <a (click)="hideNav()" class="nav_link" href="#services"
+                      >Services</a
+                    >
+                  </li>
+                  <li #navlink>
+                    <a (click)="hideNav()" class="nav_link" href="#portfolio"
+                      >Portfolio</a
+                    >
+                  </li>
+                  <!-- <li #navlink>
+                    <a
+                      (click)="hideNav()"
+                      class="nav_link"
+                      routerLink="/blog"
+                      routerLinkActive="active-link"
+                      >Blog</a
+                    >
+                  </li> -->
+                  <li #navlink>
+                    <a (click)="hideNav()" class="nav_link" href="#contact"
+                      >Contact</a
+                    >
+                  </li>
+                  <li>
+                    <a href="http://" target="_blank">
+                      <img src="" alt="" />
+                    </a>
+                    <a href="http://" target="_blank">
+                      <img src="" alt="" />
+                    </a>
+                    <a href="http://" target="_blank">
+                      <img src="" alt="" />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <a class="nav-close" (click)="hideNav()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.71 52.7">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: none;
+                    stroke: #ffffff;
+                    stroke-miterlimit: 10;
+                    stroke-width: 5;
+                  }
+                </style>
+              </defs>
+              <title>Asset 12</title>
+              <g id="Layer_2" data-name="Layer 2">
+                <g id="Layer_1-2" data-name="Layer 1">
+                  <line
+                    class="cls-1"
+                    x1="1.36"
+                    y1="1.35"
+                    x2="50.36"
+                    y2="50.35"
+                  />
+                  <line
+                    class="cls-1"
+                    x1="0.36"
+                    y1="52.35"
+                    x2="51.36"
+                    y2="0.35"
+                  />
+                </g>
+              </g>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

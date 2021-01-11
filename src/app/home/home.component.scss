@@ -1,0 +1,108 @@
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  .sub-heading {
+    color: #2f89fc;
+    letter-spacing: 4px;
+  }
+}
+.scroll-down {
+  height: 50px;
+  width: 30px;
+  border: 2px solid white;
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.scroll-down::before,
+.scroll-down::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  height: 10px;
+  width: 10px;
+  transform: translate(-50%, -100%) rotate(45deg);
+  border: 2px solid white;
+  border-top: transparent;
+  border-left: transparent;
+  animation: scroll-down 1s ease-in-out infinite;
+}
+.scroll-down::before {
+  top: 30%;
+  animation-delay: 0.3s;
+  /* animation: scroll-down 1s ease-in-out infinite; */
+}
+.scroll-down_text {
+  position: absolute;
+  bottom: 75px;
+  left: 50%;
+  transform: translateX(-33%);
+  a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    color: transparent;
+    text-decoration: none;
+    position: relative;
+    background: linear-gradient(90deg, #000, #fff, #fff, #fff);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: text-shine 5s linear infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+}
+
+@keyframes text-shine {
+  0% {
+    background-position: -400%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+
+@keyframes scroll-down {
+  0% {
+    /* top:20%; */
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    top: 90%;
+    opacity: 0;
+  }
+}
+.about-section {
+  padding-top: 7em;
+  min-height: 100vh;
+  margin-top: 170px;
+  padding-bottom: 7em;
+}
+.services-section {
+  padding-top: 7em;
+  min-height: 100vh;
+  padding-bottom: 7em;
+}
+.portfolio-section {
+  padding-bottom: 7em;
+  padding-top: 7em;
+  min-height: 100vh;
+}
+.contactus-section {
+  padding-top: 7em;
+  padding-bottom: 7em;
+  min-height: 100vh;
+}

@@ -1,0 +1,31 @@
+@import "../variables";
+header {
+  padding: 2em 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  margin: 0 auto;
+  position: fixed;
+  transition: all 0.5s;
+}
+.main-page {
+  height: 100vh;
+  padding-top: 6em;
+  padding-bottom: 6em;
+}
+.scroll-bar {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  border-radius: 00px 5px 5px 00px;
+  width: 0%;
+  height: 5px;
+  background-image: linear-gradient(to right, $blue-primary, #9ac5fd);
+}
+header.scrolled {
+  padding: 1em 0;
+  background-color: #0e0e0e;
+}

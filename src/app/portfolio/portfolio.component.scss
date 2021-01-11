@@ -1,0 +1,15 @@
+.projects {
+  .project-image {
+    height: 510px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .projects {
+    .project-image {
+      height: 300px;
+    }
+  }
+}
