@@ -1,20 +1,28 @@
 <div class="main-row row text-center">
   <div class="col col-12 mb-5 pb-5">
-    <p class="h6 sub-heading text-muted">Portfolio</p>
-    <h1 class="h1 main-heading">Checkout a few of my works</h1>
+    <p class="h6 sub-heading text-muted" data-aos="fade-down">Portfolio</p>
+    <h1 class="h1 main-heading" data-aos="zoom-out" data-aos-duration="1000">
+      Checkout a few of my works
+    </h1>
   </div>
   <div class="col col-12">
     <div class="row projects" *ngFor="let project of projects; let i = index">
       <div class="col col-12 col-sm-1 mt-sm-5 mb-sm-5" *ngIf="i % 2 == 0"></div>
       <div
+        data-aos="fade-up"
+        data-aos-anchor-placement="center-bottom"
         class="col col-12 col-sm-4 project-image mt-sm-5 mb-sm-5"
         *ngIf="i % 2 == 0"
         style="background-image: url('{{
           baseURL + project.main_image.url.substring(1)
         }}')"
-      ></div>
+      >
+        <a class="portfolio_link" routerLink="/portfolio/1"></a>
+      </div>
       <div class="col col-12 col-sm-1 mt-sm-5 mb-sm-5" *ngIf="i % 2 == 0"></div>
       <div
+        data-aos="fade-left"
+        data-aos-anchor-placement="center-bottom"
         class="col col-12 col-sm-6 text-md-left pt-5 pb-5 text-center text-sm-left mt-sm-5 mb-sm-5"
         *ngIf="i % 2 == 0"
       >
@@ -38,13 +46,19 @@
       </div>
       <div
         *ngIf="i % 2 == 1"
+        data-aos="fade-up"
+        data-aos-anchor-placement="center-bottom"
         class="col col-12 col-sm-4 d-block d-sm-none project-image mt-sm-5 mb-sm-5"
         style="background-image: url('{{
           baseURL + project.main_image.url.substring(1)
         }}')"
-      ></div>
+      >
+        <a class="portfolio_link" routerLink="/portfolio/1"></a>
+      </div>
       <div *ngIf="i % 2 == 1" class="col col-12 col-sm-1 mt-sm-5 mb-sm-5"></div>
       <div
+        data-aos="fade-right"
+        data-aos-anchor-placement="center-bottom"
         *ngIf="i % 2 == 1"
         class="col col-12 col-sm-6 text-md-left pt-5 pb-5 text-center text-sm-left mt-sm-5 mb-sm-5"
       >
@@ -68,12 +82,16 @@
       </div>
       <div *ngIf="i % 2 == 1" class="col col-12 col-sm-1 mt-sm-5 mb-sm-5"></div>
       <div
+        data-aos="fade-up"
+        data-aos-anchor-placement="center-bottom"
         *ngIf="i % 2 == 1"
         class="col col-12 col-sm-4 d-none d-sm-block project-image mt-sm-5 mb-sm-5"
         style="background-image: url('{{
           baseURL + project.main_image.url.substring(1)
         }}')"
-      ></div>
+      >
+        <a class="portfolio_link" routerLink="/portfolio/1"></a>
+      </div>
     </div>
   </div>
 </div>

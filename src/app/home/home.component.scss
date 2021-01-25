@@ -1,3 +1,7 @@
+section {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
 .hero-section {
   display: flex;
   flex-direction: column;
@@ -10,79 +14,144 @@
     letter-spacing: 4px;
   }
 }
+// .scroll-down {
+//   height: 50px;
+//   width: 30px;
+//   border: 2px solid white;
+//   position: absolute;
+//   left: 50%;
+//   bottom: 20px;
+//   border-radius: 50px;
+//   cursor: pointer;
+//   transform: translateX(-50%);
+// }
+// .scroll-down::before,
+// .scroll-down::after {
+//   content: "";
+//   position: absolute;
+//   top: 20%;
+//   left: 50%;
+//   height: 10px;
+//   width: 10px;
+//   transform: translate(-50%, -100%) rotate(45deg);
+//   border: 2px solid white;
+//   border-top: transparent;
+//   border-left: transparent;
+//   animation: scroll-down 1s ease-in-out infinite;
+// }
+// .scroll-down::before {
+//   top: 30%;
+//   animation-delay: 0.3s;
+//   /* animation: scroll-down 1s ease-in-out infinite; */
+// }
+// .scroll-down_text {
+//   position: absolute;
+//   bottom: 75px;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   a {
+//     display: inline-block;
+//     color: white;
+//     text-decoration: none;
+//     color: transparent;
+//     text-decoration: none;
+//     position: relative;
+//     background: linear-gradient(90deg, #000, #fff, #fff, #fff);
+//     background-repeat: no-repeat;
+//     background-size: 80%;
+//     animation: text-shine 5s linear infinite;
+//     background-clip: text;
+//     -webkit-background-clip: text;
+//   }
+// }
+
+// @keyframes text-shine {
+//   0% {
+//     background-position: -400%;
+//   }
+//   100% {
+//     background-position: 400%;
+//   }
+// }
+
+// @keyframes scroll-down {
+//   0% {
+//     /* top:20%; */
+//     opacity: 0;
+//   }
+//   30% {
+//     opacity: 1;
+//   }
+//   60% {
+//     opacity: 1;
+//   }
+//   100% {
+//     top: 90%;
+//     opacity: 0;
+//   }
+// }
 .scroll-down {
-  height: 50px;
-  width: 30px;
-  border: 2px solid white;
+  bottom: 10px;
   position: absolute;
+  padding-top: 80px;
   left: 50%;
-  bottom: 20px;
-  border-radius: 50px;
-  cursor: pointer;
   transform: translateX(-50%);
+  color: white;
+  text-decoration: none;
+  opacity: 0.7;
+  &:hover {
+    opacity: 0.5;
+  }
 }
-.scroll-down::before,
-.scroll-down::after {
-  content: "";
+.scroll-down span {
   position: absolute;
-  top: 20%;
+  top: 0;
   left: 50%;
-  height: 10px;
-  width: 10px;
-  transform: translate(-50%, -100%) rotate(45deg);
-  border: 2px solid white;
-  border-top: transparent;
-  border-left: transparent;
-  animation: scroll-down 1s ease-in-out infinite;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb07 2s infinite;
+  animation: sdb07 2s infinite;
+  opacity: 0;
+  box-sizing: border-box;
 }
-.scroll-down::before {
-  top: 30%;
+.scroll-down span:nth-of-type(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+.scroll-down span:nth-of-type(2) {
+  top: 16px;
+  -webkit-animation-delay: 0.15s;
+  animation-delay: 0.15s;
+}
+.scroll-down span:nth-of-type(3) {
+  top: 32px;
+  -webkit-animation-delay: 0.3s;
   animation-delay: 0.3s;
-  /* animation: scroll-down 1s ease-in-out infinite; */
 }
-.scroll-down_text {
-  position: absolute;
-  bottom: 75px;
-  left: 50%;
-  transform: translateX(-50%);
-  a {
-    display: inline-block;
-    color: white;
-    text-decoration: none;
-    color: transparent;
-    text-decoration: none;
-    position: relative;
-    background: linear-gradient(90deg, #000, #fff, #fff, #fff);
-    background-repeat: no-repeat;
-    background-size: 80%;
-    animation: text-shine 5s linear infinite;
-    background-clip: text;
-    -webkit-background-clip: text;
-  }
-}
-
-@keyframes text-shine {
+@-webkit-keyframes sdb07 {
   0% {
-    background-position: -400%;
-  }
-  100% {
-    background-position: 400%;
-  }
-}
-
-@keyframes scroll-down {
-  0% {
-    /* top:20%; */
     opacity: 0;
   }
-  30% {
-    opacity: 1;
-  }
-  60% {
+  50% {
     opacity: 1;
   }
   100% {
-    top: 90%;
+    opacity: 0;
+  }
+}
+@keyframes sdb07 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
     opacity: 0;
   }
 }

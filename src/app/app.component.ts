@@ -1,19 +1,28 @@
+import { isPlatformBrowser } from '@angular/common';
 import {
   Component,
   ElementRef,
   HostListener,
+  Inject,
+  OnInit,
+  PLATFORM_ID,
   Renderer2,
   ViewChild,
 } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  constructor(private renderer: Renderer2, private meta: Meta) {
+export class AppComponent implements OnInit {
+  constructor(
+    private renderer: Renderer2,
+    private meta: Meta,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
     this.meta.addTag({
       name: 'description',
       content: 'My personal portfolio.',
@@ -23,6 +32,13 @@ export class AppComponent {
       name: 'keywords',
       content: 'Portfolio, Angular, Strapi',
     });
+  }
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init({
+        duration: 500,
+      });
+    }
   }
   title = 'portfolio';
   @ViewChild('scrollbar') scrollBar: ElementRef;

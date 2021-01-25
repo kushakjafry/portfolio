@@ -13,6 +13,7 @@ import { ProjectService } from './services/project.service';
 import { HttpClientModule } from '@angular/common/http';
 import { baseURL } from './shared/baseUrl';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SinglePortfolioComponent } from './single-portfolio/single-portfolio.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ServiceComponent,
     PortfolioComponent,
     ContactusComponent,
+    SinglePortfolioComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
