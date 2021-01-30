@@ -34,8 +34,24 @@
     }
     .hire_me {
       .btn {
-        letter-spacing: 2px;
         text-transform: uppercase;
+        font-size: 15px;
+        border-radius: 0 !important;
+        letter-spacing: 1px;
+        padding: 15px 25px;
+        font-weight: 600;
+        transition: all 0.3s ease 0s;
+        width: max-content;
+        background-color: transparent;
+        color: #2f89fc;
+        border: 2px solid #2f89fc;
+        &:hover {
+          color: white;
+          border: 2px solid white;
+          transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
+          -ms-transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
+          -webkit-transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
+        }
       }
       p {
         a {

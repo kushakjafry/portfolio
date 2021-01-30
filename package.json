@@ -27,6 +27,8 @@
     "@nguniversal/express-engine": "^11.0.1",
     "aos": "^2.3.4",
     "express": "^4.15.2",
+    "lottie-web": "^5.7.6",
+    "ngx-lottie": "^6.4.0",
     "rxjs": "~6.6.0",
     "t-writer.js": "^1.0.4",
     "tslib": "^2.0.0",

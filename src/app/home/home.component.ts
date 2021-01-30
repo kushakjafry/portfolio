@@ -2,6 +2,8 @@ import { Component, Inject, OnInit } from '@angular/core';
 import * as Typewriter from 't-writer.js';
 import { PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { AnimationItem } from 'lottie-web';
+import { AnimationOptions } from 'ngx-lottie';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +12,13 @@ import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  options: AnimationOptions = {
+    path: '/assets/animations/18123-developer.json',
+  };
+
+  animationCreated(animationItem: AnimationItem): void {
+    console.log(animationItem);
+  }
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       const target = document.querySelector('.tw');

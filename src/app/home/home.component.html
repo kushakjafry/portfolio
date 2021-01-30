@@ -1,15 +1,25 @@
 <section class="hero-section">
   <div
+    class="lottie-animation d-none d-lg-block"
+    data-aos="fade-left"
+    data-aos-offset="0"
+  >
+    <ng-lottie
+      [options]="options"
+      (animationCreated)="animationCreated($event)"
+    ></ng-lottie>
+  </div>
+  <div
     class="h5 text-muted text-center mb-3"
     style="letter-spacing: 4px; text-transform: uppercase"
-    data-aos="zoom-in"
+    data-aos="fade-right"
   >
     Turn Your Concept
   </div>
   <h1
-    class="tw h1 text-center"
+    class="tw h1 text-center text-sm-left"
     style="font-weight: bold; letter-spacing: 4px"
-    data-aos="zoom-out"
+    data-aos="fade-right"
     data-aos-duration="1000"
   >
     Into A Working
@@ -21,22 +31,33 @@
     Full Stack Web Developer
   </div>
   <div>
+    <a href="#portfolio" class="learn-more mt-5">
+      <span class="circle" aria-hidden="true">
+        <span
+          class="icon arrow"
+          data-aos="fade-right"
+          data-aos-delay="300"
+        ></span>
+      </span>
+      <span class="button-text" data-aos="fade-up" data-aos-delay="600"
+        >View My Works</span
+      >
+    </a>
+  </div>
+  <!-- <div class="d-sm-none">
     <a href="#about" class="scroll-down"
       ><span></span><span></span><span></span>Checkout More</a
     >
-  </div>
-  <!-- <div class="scroll-down_text">
-    <a href="#about"> Read More </a>
   </div> -->
 </section>
-<section class="about-section" id="about">
-  <app-about></app-about>
+<section class="portfolio-section" id="portfolio">
+  <app-portfolio></app-portfolio>
 </section>
 <section class="services-section" id="services">
   <app-service></app-service>
 </section>
-<section class="portfolio-section" id="portfolio">
-  <app-portfolio></app-portfolio>
+<section class="about-section" id="about">
+  <app-about></app-about>
 </section>
 <section class="contactus-section" id="contact">
   <app-contactus></app-contactus>

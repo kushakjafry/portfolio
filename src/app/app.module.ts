@@ -14,6 +14,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { baseURL } from './shared/baseUrl';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SinglePortfolioComponent } from './single-portfolio/single-portfolio.component';
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
+
+export function playerFactory() {
+  return player;
+}
 
 @NgModule({
   declarations: [
@@ -31,6 +37,7 @@ import { SinglePortfolioComponent } from './single-portfolio/single-portfolio.co
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    LottieModule.forRoot({ player: playerFactory }),
   ],
   providers: [
     ProcessHttpMsgService,
