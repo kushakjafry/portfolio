@@ -27,7 +27,19 @@
           (ngSubmit)="onSubmit(FormData.value)"
           novalidate
         >
-          <div class="form__group field" data-aos="fade-left">
+          <div
+            class="loadingio-spinner-rolling-66d5xngzi2 contact-me_spinner"
+            [ngClass]="{ 'contact-me_spinner-shown': spinnerShow }"
+          >
+            <div class="ldio-0u03igrkzr0j">
+              <div></div>
+            </div>
+          </div>
+          <div
+            class="form__group field"
+            data-aos="fade-left"
+            [ngClass]="{ 'form-hidden': spinnerShow }"
+          >
             <input
               type="input"
               class="form__field"
@@ -39,7 +51,11 @@
             />
             <label for="name" class="form__label">Name</label>
           </div>
-          <div class="form__group field" data-aos="fade-left">
+          <div
+            class="form__group field"
+            data-aos="fade-left"
+            [ngClass]="{ 'form-hidden': spinnerShow }"
+          >
             <input
               type="input"
               class="form__field"
@@ -51,7 +67,11 @@
             />
             <label for="email" class="form__label">Email</label>
           </div>
-          <div class="form__group field" data-aos="fade-left">
+          <div
+            class="form__group field"
+            data-aos="fade-left"
+            [ngClass]="{ 'form-hidden': spinnerShow }"
+          >
             <textarea
               type="input"
               class="form__field"
@@ -65,6 +85,7 @@
             <label for="message" class="form__label">Message</label>
           </div>
           <button
+            [ngClass]="{ 'form-hidden': spinnerShow }"
             data-aos="fade-up"
             type="submit"
             class="btn btn-primary btn-lg mt-4"

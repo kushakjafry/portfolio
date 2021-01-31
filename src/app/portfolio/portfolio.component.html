@@ -14,10 +14,13 @@
         class="col col-12 col-sm-4 project-image mt-sm-5 mb-sm-5"
         *ngIf="i % 2 == 0"
         style="background-image: url('{{
-          baseURL + project.main_image.url.substring(1)
+          '/assets/uploads/' + project.name + '/' + project.main_image.url
         }}')"
       >
-        <a class="portfolio_link" routerLink="/portfolio/1"></a>
+        <a
+          class="portfolio_link"
+          [routerLink]="['portfolio', project.name]"
+        ></a>
       </div>
       <div class="col col-12 col-sm-1 mt-sm-5 mb-sm-5" *ngIf="i % 2 == 0"></div>
       <div
@@ -50,10 +53,13 @@
         data-aos-anchor-placement="center-bottom"
         class="col col-12 col-sm-4 d-block d-sm-none project-image mt-sm-5 mb-sm-5"
         style="background-image: url('{{
-          baseURL + project.main_image.url.substring(1)
+          '/assets/uploads/' + project.name + '/' + project.main_image.url
         }}')"
       >
-        <a class="portfolio_link" routerLink="/portfolio/1"></a>
+        <a
+          class="portfolio_link"
+          [routerLink]="['portfolio', project.name]"
+        ></a>
       </div>
       <div *ngIf="i % 2 == 1" class="col col-12 col-sm-1 mt-sm-5 mb-sm-5"></div>
       <div
@@ -87,10 +93,13 @@
         *ngIf="i % 2 == 1"
         class="col col-12 col-sm-4 d-none d-sm-block project-image mt-sm-5 mb-sm-5"
         style="background-image: url('{{
-          baseURL + project.main_image.url.substring(1)
+          '/assets/uploads/' + project.name + '/' + project.main_image.url
         }}')"
       >
-        <a class="portfolio_link" routerLink="/portfolio/1"></a>
+        <a
+          class="portfolio_link"
+          [routerLink]="['portfolio', project.name]"
+        ></a>
       </div>
     </div>
   </div>

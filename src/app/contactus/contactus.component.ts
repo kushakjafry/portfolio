@@ -33,10 +33,12 @@ export class ContactusComponent implements OnInit {
       (message) => {
         this.spinnerShow = false;
         this.messageSent = 'Message was Sent';
+        this.FormData.reset();
       },
       (err) => {
         this.spinnerShow = false;
         this.error = 'Message was Not Sent';
+        this.FormData.reset();
       }
     );
   }
