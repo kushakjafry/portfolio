@@ -25,12 +25,13 @@ export class AppComponent implements OnInit {
   ) {
     this.meta.addTag({
       name: 'description',
-      content: 'My personal portfolio.',
+      content:
+        'Hi I am Kushak Jafry. A full stack web developer skilled in MEAN stack(Angular, Express, Nodejs and MongoDB). Contact Me at kushakjafry@gmail.com',
     });
     this.meta.addTag({ name: 'author', content: 'Kushak Jafry' });
     this.meta.addTag({
       name: 'keywords',
-      content: 'Portfolio, Angular, Strapi',
+      content: 'Portfolio, Personal Portfolio, Angular',
     });
   }
   ngOnInit(): void {
