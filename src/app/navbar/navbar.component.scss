@@ -35,6 +35,24 @@
       }
     }
   }
+  .home-button {
+    a {
+      border: 1px solid white;
+      padding: 10px 15px;
+      text-decoration: none !important;
+      color: white;
+      font-size: 14px;
+      transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    &:hover {
+      a {
+        background-color: white;
+        color: black;
+        text-decoration: none;
+        transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+    }
+  }
 }
 .full-menu {
   width: 75vw;

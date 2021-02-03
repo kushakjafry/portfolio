@@ -5,12 +5,25 @@
         <div class="navbar-brand" data-aos="fade-down">
           <a routerLink="">Kushak Jafry</a>
         </div>
-        <div class="navbar-icon" (click)="showNav()" data-aos="fade-down">
+        <div class="home-button" data-aos="fade-down">
+          <a
+            [routerLink]="['/']"
+            routerLinkActive="router-link-active"
+            *ngIf="!visibleMenu"
+            >Home</a
+          >
+        </div>
+        <div
+          class="navbar-icon"
+          (click)="showNav()"
+          data-aos="fade-down"
+          *ngIf="visibleMenu"
+        >
           <div></div>
           <div></div>
           <div></div>
         </div>
-        <div class="full-menu" #fullMenu>
+        <div class="full-menu" #fullMenu *ngIf="visibleMenu">
           <div class="container-fluid">
             <div class="row">
               <div class="col col-12">

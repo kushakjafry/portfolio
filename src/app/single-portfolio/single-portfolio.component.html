@@ -1,1 +1,51 @@
-<p>single-portfolio works!</p>
+<div
+  class="full-page_image"
+  *ngIf="portfolio"
+  style="background-image: url('/assets/uploads/{{ portfolio.name }}/{{
+    portfolio.main_image.url
+  }}');"
+>
+  <div class="portfolio-heading">
+    <h1
+      class="h1 text-center"
+      data-aos="fade-up"
+      [attr.data-aos-delay]="routeChanged ? '500' : null"
+    >
+      {{ portfolio.name }}
+    </h1>
+    <h5
+      class="text-center"
+      data-aos="fade-up"
+      [attr.data-aos-delay]="routeChanged ? '500' : null"
+    >
+      Website
+    </h5>
+  </div>
+  <div class="links">
+    <a
+      *ngIf="portfolio.github_link !== 'private'"
+      href="{{ portfolio.github_link }}"
+      target="blank"
+      class="btn project-link github-link"
+      ><div [inlineSVG]="'../../assets/svg/icons8-github.svg'"></div
+    ></a>
+    <a
+      *ngIf="portfolio.project_link !== 'private'"
+      href="{{ portfolio.project_link }}"
+      target="blank"
+      class="btn project-link github-link"
+      ><button class="btn btn-primary">Website</button></a
+    >
+  </div>
+</div>
+<div class="row portfolio-details" data-aos="fade-up">
+  <div class="col col-12">
+    <h2>About The Project</h2>
+  </div>
+  <div
+    *ngIf="portfolio"
+    class="col col-12"
+    [innerHTML]="portfolio.description"
+    style="color: #beb9b9; font-size: 16.5px"
+  ></div>
+</div>

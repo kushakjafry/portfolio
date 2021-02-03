@@ -2,6 +2,11 @@
 <header #header>
   <app-navbar></app-navbar>
 </header>
-<div class="container main-page">
-  <router-outlet></router-outlet>
+<div
+  class="container main-page"
+  [@routeAnimations]="
+    o && o.activatedRouteData && o.activatedRouteData['animation']
+  "
+>
+  <router-outlet #o="outlet"></router-outlet>
 </div>

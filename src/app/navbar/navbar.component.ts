@@ -8,19 +8,32 @@ import {
   ViewChild,
   ViewChildren,
 } from '@angular/core';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
-export class NavbarComponent implements AfterViewInit {
+export class NavbarComponent implements AfterViewInit, OnInit {
   @ViewChild('fullMenu') fullMenu: ElementRef | undefined;
+  visibleMenu: boolean = true;
   @ViewChildren('navlink') pageMenu!: QueryList<ElementRef>;
   navAnimationListener!: () => void;
   navLinksAnimationListener!: () => void;
   navLinkAnimationListener!: () => void;
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private router: Router) {}
+  ngOnInit(): void {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationStart || event instanceof NavigationEnd) {
+        if (event.url.includes('/portfolio/')) {
+          this.visibleMenu = false;
+        } else {
+          this.visibleMenu = true;
+        }
+      }
+    });
+  }
   ngAfterViewInit(): void {
     this.renderer.setStyle(this.fullMenu?.nativeElement, 'display', 'none');
   }
