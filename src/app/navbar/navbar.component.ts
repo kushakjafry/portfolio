@@ -1,14 +1,18 @@
+import { isPlatformBrowser } from '@angular/common';
 import {
   AfterViewInit,
   Component,
   ElementRef,
+  Inject,
   OnInit,
+  PLATFORM_ID,
   QueryList,
   Renderer2,
   ViewChild,
   ViewChildren,
 } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { ScrollService } from '../services/scroll.service';
 
 @Component({
   selector: 'app-navbar',
@@ -22,7 +26,17 @@ export class NavbarComponent implements AfterViewInit, OnInit {
   navAnimationListener!: () => void;
   navLinksAnimationListener!: () => void;
   navLinkAnimationListener!: () => void;
-  constructor(private renderer: Renderer2, private router: Router) {}
+  home: HTMLElement;
+  portfolio: HTMLElement;
+  service: HTMLElement;
+  contact: HTMLElement;
+  about: HTMLElement;
+  constructor(
+    private renderer: Renderer2,
+    private router: Router,
+    private scrollService: ScrollService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationStart || event instanceof NavigationEnd) {
@@ -79,5 +93,10 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         this.navAnimationListener();
       }
     );
+  }
+  linkClicked(el: string) {
+    const elem = this.scrollService[el];
+    this.scrollService.scrollIntoView(elem);
+    this.hideNav();
   }
 }

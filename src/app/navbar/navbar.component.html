@@ -38,20 +38,34 @@
                     >
                   </li>
                   <li #navlink>
-                    <a (click)="hideNav()" class="nav_link" href="#">Home</a>
+                    <a
+                      (click)="linkClicked('home')"
+                      class="nav_link"
+                      href="void:javascript"
+                      >Home</a
+                    >
                   </li>
                   <li #navlink>
-                    <a (click)="hideNav()" class="nav_link" href="#portfolio"
+                    <a
+                      (click)="linkClicked('portfolios')"
+                      class="nav_link"
+                      href="void:javascript"
                       >Portfolio</a
                     >
                   </li>
                   <li #navlink>
-                    <a (click)="hideNav()" class="nav_link" href="#services"
+                    <a
+                      (click)="linkClicked('services')"
+                      class="nav_link"
+                      href="void:javascript"
                       >Services</a
                     >
                   </li>
                   <li #navlink>
-                    <a (click)="hideNav()" class="nav_link" href="#about"
+                    <a
+                      (click)="linkClicked('about')"
+                      class="nav_link"
+                      href="void:javascript"
                       >About</a
                     >
                   </li>
@@ -65,7 +79,10 @@
                     >
                   </li> -->
                   <li #navlink>
-                    <a (click)="hideNav()" class="nav_link" href="#contact"
+                    <a
+                      (click)="linkClicked('contact')"
+                      class="nav_link"
+                      href="void:javascript"
                       >Contact</a
                     >
                   </li>

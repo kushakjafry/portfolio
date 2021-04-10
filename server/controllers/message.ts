@@ -26,6 +26,7 @@ export async function sendContactMessage(
       res.status(400).json({ error: 'Kindly Send all the fields' });
     }
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 }
