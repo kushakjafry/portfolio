@@ -153,7 +153,12 @@
       class="hire_me mt-4 pl-5 pr-5 text-center text-md-left"
       data-aos="fade-up"
     >
-      <a href="#contact" class="btn btn-outline-primary">HIRE ME</a>
+      <a
+        style="cursor: pointer"
+        class="btn btn-outline-primary"
+        (click)="this.scrollService.scrollIntoView('contact')"
+        >HIRE ME</a
+      >
       <p class="mt-4">OR Contact me here!</p>
       <p>
         <span class="text-muted">Email:</span>

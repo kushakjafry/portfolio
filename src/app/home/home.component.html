@@ -31,7 +31,11 @@
     Full Stack Web Developer
   </div>
   <div>
-    <a href="#portfolio" class="learn-more mt-5">
+    <a
+      class="learn-more mt-5"
+      style="cursor: pointer"
+      (click)="this.scrollService.scrollIntoView('portfolios')"
+    >
       <span class="circle" aria-hidden="true">
         <span
           class="icon arrow"

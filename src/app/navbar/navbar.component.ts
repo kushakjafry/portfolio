@@ -26,11 +26,6 @@ export class NavbarComponent implements AfterViewInit, OnInit {
   navAnimationListener!: () => void;
   navLinksAnimationListener!: () => void;
   navLinkAnimationListener!: () => void;
-  home: HTMLElement;
-  portfolio: HTMLElement;
-  service: HTMLElement;
-  contact: HTMLElement;
-  about: HTMLElement;
   constructor(
     private renderer: Renderer2,
     private router: Router,
@@ -95,8 +90,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     );
   }
   linkClicked(el: string) {
-    const elem = this.scrollService[el];
-    this.scrollService.scrollIntoView(elem);
+    this.scrollService.scrollIntoView(el);
     this.hideNav();
   }
 }

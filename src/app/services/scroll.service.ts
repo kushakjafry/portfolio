@@ -10,7 +10,8 @@ export class ScrollService {
   portfolios: HTMLElement;
   contact: HTMLElement;
   constructor() {}
-  scrollIntoView(el: HTMLElement) {
-    el.scrollIntoView({ behavior: 'smooth' });
+  scrollIntoView(el: string) {
+    const elem: HTMLElement = this[el];
+    elem.scrollIntoView({ behavior: 'smooth' });
   }
 }
