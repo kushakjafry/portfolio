@@ -4,6 +4,7 @@ import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';
 import * as cors from 'cors';
 import * as mongoose from 'mongoose';
+import sslRedirect from 'heroku-ssl-redirect';
 import { join } from 'path';
 
 //Router Imports
@@ -34,6 +35,7 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', distFolder);
   server.use(cors());
+  server.use(sslRedirect());
   server.use(express.json());
   const connect = mongoose.connect(process.env.mongoUrl, {
     useNewUrlParser: true,
