@@ -9,7 +9,7 @@ export async function sendContactMessage(
     if (req.body?.email && req.body?.name && req.body?.message) {
       await sendEmail({
         to: 'kushakjafry@gmail.com',
-        from: req.body.email,
+        from: 'kushakjafry@outlook.com',
         replyTo: req.body.email,
         subject: 'Mail from portfolio website',
         html:

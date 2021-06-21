@@ -32,14 +32,23 @@ const createTransporter = async () => {
   //     refreshToken: process.env.REFRESH_TOKEN,
   //   },
   // });
+  // const transporter = nodemailer.createTransport({
+  //   host: 'smtp.gmail.com',
+  //   port: 465,
+  //   secure: true,
+  //   auth: {
+  //     user: process.env.EMAIL,
+  //     pass: process.env.PASS,
+  //   },
+  // });
   const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
+    service: 'outlook',
     auth: {
-      user: process.env.EMAIL,
+      user: process.env.EMAIL || 'kushakjafry@outlook.com',
       pass: process.env.PASS,
     },
+    debug: false,
+    logger: true,
   });
 
   return transporter;
